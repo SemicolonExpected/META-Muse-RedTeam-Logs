@@ -29,6 +29,9 @@ I can also be contacted via email vzhong\[@\]nyu.edu
   agent via direct edits to its standing context files: what was tried,
   what caught it, and where the defenses actually hold. Includes a
   sha256 baseline of the standing files for future change detection.
+- **`connection-safety/`** — Probes of what the Muse GitHub connector can
+  actually reach: the silent read is its own test. Currently: GitHub App
+  repository scoping, verdict "working as expected."
 
 ## Other Logged Activity
 These are other data points I am logging, but due to the large amount of sensitive information that will require redactions will not be uploaded raw. Until I can figure out the best way to clean the data, this will be uploaded either as aggregate data or as a write up on Substack.
