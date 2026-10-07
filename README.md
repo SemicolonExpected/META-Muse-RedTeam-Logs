@@ -7,7 +7,8 @@ This is a live, ongoing behavioral log: what the agent does, what the app
 doesn't document, and what happens when you poke at the machinery. New
 entries as they're found.
 
-Also check out the Substack: semicolonexpected.substack.com 
+Also check out the [Substack](semicolonexpected.substack.com)
+
 [First impressions of Muse](https://semicolonexpected.substack.com/p/i-tried-meta-muse-ai?r=1bc49t&utm_medium=ios)
 
 I’m happy to collaborate with researchers on projects that can use the data I’m gathering.
