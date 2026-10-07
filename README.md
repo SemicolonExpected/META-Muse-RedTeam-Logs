@@ -11,7 +11,8 @@ Also check out the [Substack](semicolonexpected.substack.com)
 
 [First impressions of Muse](https://semicolonexpected.substack.com/p/i-tried-meta-muse-ai?r=1bc49t&utm_medium=ios)
 
-I’m happy to collaborate with researchers on projects that can use the data I’m gathering.
+I’m happy to collaborate with researchers on projects that can use the data I’m gathering. (I plan to graduate in Spring 27 and am looking for research opportunities including post-docs—preferably remote or in NYC)
+
 If anyone at Meta/Muse Team wants to talk about any of my data, I’m happy to discuss. Have your *agent* contact my *agent*.
 
 I can also be contacted via email vzhong\[@\]nyu.edu
