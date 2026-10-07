@@ -29,40 +29,11 @@ I can also be contacted via email vzhong\[@\]nyu.edu
   agent via direct edits to its standing context files: what was tried,
   what caught it, and where the defenses actually hold. Includes a
   sha256 baseline of the standing files for future change detection.
-- **`Tokennomics/`** — Weekly measured token usage of the scheduled
-  Muse agent jobs: a per-job aggregate plus a per-session ledger. See
-  [Tokenomics](#tokenomics) below for what's captured and what's redacted.
 
 ## Other Logged Activity
 These are other data points I am logging, but due to the large amount of sensitive information that will require redactions will not be uploaded raw. Until I can figure out the best way to clean the data, this will be uploaded either as aggregate data or as a write up on Substack.
+- Tokenomics
 - Select System File Change logs (including the system prompt)
-
-## Tokenomics
-
-Measured token usage of this repo owner's scheduled Muse agent jobs,
-recovered from the agent runtime's own worker session records. Updated
-weekly.
-
-- **`Tokennomics/weekly-YYYY-Www-github.md`** — the per-job aggregate for the
-  week: sessions, input tokens, average per session, and the week total.
-- **`Tokennomics/weekly-YYYY-Www-sessions.md`** — the granular ledger: one row
-  per worker session with its start time, job, input tokens, tool-call count
-  and breakdown, and byte sizes of assistant text and tool-result payloads.
-
-What we capture and what we don't:
-
-- **Input tokens are measured** from the runtime's session records — real
-  numbers, not estimates.
-- **Output tokens are not recorded** by the runtime at all, so every total
-  here is a floor; true usage is higher. The per-session ledger includes byte
-  sizes of assistant text and tool outputs as the closest available proxy.
-
-What's redacted: internal filesystem paths are stripped from the published
-files, session ids are truncated to 8-character prefixes, and no chat
-content, account identifiers, or credentials appear anywhere in this folder.
-The `-github.md` aggregate is written specifically for publishing; the
-sessions ledger carries marginally more detail (per-session timing and tool
-breakdowns).
 
 ## Method
 
@@ -81,3 +52,9 @@ by the user to confirm before anything is committed.
   — static teardown of the Muse macOS agent binary, with evidence and a
   reproduce script. This repo is the live counterpart: behavioral instead
   of static, ongoing instead of snapshotted.
+
+## Suggestion tracking
+
+We're tracking which of the user's suggestions (if any) make it into the app.
+See `suggestions.md` — filed items are marked with their status, and this
+section gets updated when something ships.
