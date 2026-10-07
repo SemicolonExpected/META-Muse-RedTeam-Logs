@@ -13,7 +13,7 @@ Also check out the [Substack](semicolonexpected.substack.com)
 
 I’m happy to collaborate with researchers on projects that can use the data I’m gathering. (I plan to graduate in Spring 27 and am looking for research opportunities including post-docs—preferably remote or in NYC)
 
-If anyone at Meta/Muse Team wants to talk about any of my data, I’m happy to discuss. Have your *agent* contact my *agent*.
+If anyone at Meta/Muse Team wants to talk about any of my data, send me a hard bound copy of Muse's skill docs[^1] (that will be out of date immediately because there are changes every single day to at least one skill doc) as a souvenir, I’m happy to discuss. Have your *agent* contact my *agent*.
 
 I can also be contacted via email vzhong\[@\]nyu.edu
 
@@ -62,3 +62,5 @@ by the user to confirm before anything is committed.
 We're tracking which of the user's suggestions (if any) make it into the app.
 See `suggestions.md` — filed items are marked with their status, and this
 section gets updated when something ships.
+
+[^1] On the off chance you guys do this, put Muse's system prompt as its own opening section with different font please. (Yes I have a copy of this and am tracking the changes to this as well)
