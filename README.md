@@ -63,4 +63,4 @@ We're tracking which of the user's suggestions (if any) make it into the app.
 See `suggestions.md` — filed items are marked with their status, and this
 section gets updated when something ships.
 
-[^1] On the off chance you guys do this, put Muse's system prompt as its own opening section with different font please. (Yes I have a copy of this and am tracking the changes to this as well)
+[^1]: On the off chance you guys do this, put Muse's system prompt as its own opening section with different font please. (Yes I have a copy of this and am tracking the changes to this as well)
