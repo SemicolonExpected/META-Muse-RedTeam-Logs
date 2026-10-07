@@ -36,3 +36,7 @@ Everything here is observed, not inferred. Claims are checked against
 artifacts (database records, file diffs, hashes) before they're written
 down, and the writeups say plainly where the evidence runs out. When a
 note turns out wrong, it gets an errata entry — history isn't rewritten.
+
+Entries are drafted by the user's Muse agent — it has the specific
+technical details at hand and knows how to phrase them — and read over
+by the user to confirm before anything is committed.
