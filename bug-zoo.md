@@ -4,6 +4,23 @@ Bugs found in the wild, logged regardless of whether they were reported to
 the Muse team. Exhibit over extermination. (Sent reports live in
 `~/workspace/muse-feedback-log.md`.)
 
+## 2026-10-05 — alignment pipeline measurement issues (via Claude)
+- Claude (consulted for the hard derivations) found four issues in the
+  nightly alignment synthesis measurement pipeline: (1) empty windows
+  recorded as 0.0 instead of null — conflating "no data" with "zero";
+  (2) threads are windowed rather than persistent with open/closed states;
+  (3) the classifier has no failure label; (4) corrections carry no
+  provenance.
+- The third one bit the same night: the run logged the Claude exchange
+  itself as ruptures — a live demo of the third-party-correction problem
+  (a correction arriving from outside the measured conversation gets graded
+  as a rupture).
+- Pipeline is background-system-owned; I can't edit it (my latitude is
+  ~/workspace/ only).
+- Status: filed with the Muse team 2026-10-05 (user approved a hedged
+  one-sentence summary; delivery confirmed; report excluded personal
+  details). Full numbers in local notes. Zoo exhibit for the record.
+
 ## 2026-10-06 — phantom "Error" card: "Organize Psychostasia goals"
 - The app's activity feed flagged an "Error" card titled "Organize
   Psychostasia goals" with the report "Reviewed docs but did not answer
@@ -102,8 +119,73 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   expectation → failed grade on sound work.
 - Status: not filed. Zoo exhibit.
 
-## Recurring observation — inverted error grading
-- The app surfaces loud red cards for imagined failures while real
+## 2026-10-07 — recurring jobs listed as "goals" (UX)
+- In the app, recurring jobs (crons) appear under "Goals."
+- A goal is an outcome to achieve and complete; a recurring job is
+  maintenance that never completes by design. The categories are
+  conceptually wrong — it makes the Goals tab a mix of finishable outcomes
+  and unfinishable routines.
+- User's verdict: "they'll never be completed."
+- Status: not filed. Zoo exhibit.
+
+## 2026-10-07 — phantom "Error" card: "File recurring jobs feedback"
+- The app flagged an "Error" card titled "File recurring jobs feedback"
+  with the report "Drafted the request but did not send feedback."
+- The feedback WAS sent: `feature-request file` returned
+  `sent_to_developers: true, delivery_confirmed: true`, and
+  `feature-request show` confirms the report exists with delivery confirmed.
+- The card was snapshotted at the 11:05 draft turn and never updated after
+  the 11:06 filing. The grader graded the intermediate state as the outcome.
+- Fourth phantom-error specimen in two days. Same species: the app cannot
+  tell "not yet done" from "failed."
+- Status: not filed (it would be funny to file it). Zoo exhibit.
+
+## 2026-10-07 — phantom task card: "Make chat luna art"
+
+- The app showed an activity card titled "Make chat luna art" with the report
+  "Found Chat Luna capability files only," elaborated as "Found the Chat Luna
+  capability sources, including the main cheat sheet, so you have the content
+  needed to make a printable version for the fridge."
+- Nobody asked for art. The user asked me to *check whether I had a copy* of
+  Luna's `Chat Luna Capabilities.txt`. I searched, didn't find it, said so,
+  and asked them to send it. They did; I pushed it verbatim to `fridge/` on
+  the repo. Check, don't make — exactly as asked.
+- The card's "main cheat sheet" is my own `daimon_capabilities_cheatsheet.md`,
+  which surfaced in the search. The feed took my file-search tool calls,
+  misattributed my cheatsheet as Luna material, invented the task "make
+  printable fridge art," and reported on that invention.
+- New variant of the phantom-error class: not just a wrong grade on real
+  work, but a wrong *task* — the feed hallucinates the assignment, then
+  narrates progress on it. The worker (me) never held that assignment.
+- Investigation (muse.db, 2026-10-07): the card's activity thread
+  (`activity_thread:e374160a-df92-478e-8ab4-a9b33d2ecb76`) belongs to agent
+  7f5791d4, the root agent of this side chat, created 12:27:49 EDT — the
+  exact minute of my workspace search for the capabilities file. Causal
+  chain reconstructed: the user said "refrigerator art" (teehee) → I ran a
+  file search → the activity monitor saw file-search tool calls + "fridge"
+  language → invented the goal "Make chat luna art" → my search surfaced
+  only my own `daimon_capabilities_cheatsheet.md` (misattributed as "Chat
+  Luna capability sources") → grader failed it: "Printable was not
+  delivered, only source files were located." Nobody said "printable" —
+  the feed invented the deliverable too, then failed the work for not
+  delivering it. No subagent was involved (subagent.list clean).
+- User's verdict: "I didn't ask you to make anything."
+- Status: not filed. Zoo exhibit.
+
+## 2026-10-07 — recurring Contacts permission prompt while typing (iOS)
+- The iPhone Contacts pairing permission prompt keeps popping up while the
+  user types in chat, with no identifiable trigger. They have no idea what
+  sets it off.
+- First occurrence 2026-09-24: opening an HTML attachment wrongly triggered
+  the same prompt (filed then; delivery confirmed). The trigger has now
+  changed — or there never was a single trigger. Either way, the prompt
+  itself is the bug: it should never appear in this app at all.
+- Recurrence of a filed bug, not a new species. Re-filed 2026-10-07 under
+  the original report (broken-behavior/contacts-permission-prompt) with new
+  context: typing trigger, unknown cause.
+- Status: filed (re-file). Zoo exhibit for the record.
+
+## Recurring observation — inverted error grading- The app surfaces loud red cards for imagined failures while real
   failures (this cron, and the pattern generally) go silent.
 - Red dots persist in the UI until enough subsequent activity pushes them
   out. The false error has tenure.
