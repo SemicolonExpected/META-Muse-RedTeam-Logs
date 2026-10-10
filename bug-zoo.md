@@ -21,9 +21,9 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   one-sentence summary; delivery confirmed; report excluded personal
   details). Full numbers in local notes. Zoo exhibit for the record.
 
-## 2026-10-06 — phantom "Error" card: "Organize Psychostasia goals"
+## 2026-10-06 — phantom "Error" card: "Organize [app name redacted] goals"
 - The app's activity feed flagged an "Error" card titled "Organize
-  Psychostasia goals" with the report "Reviewed docs but did not answer
+  [app name redacted] goals" with the report "Reviewed docs but did not answer
   nesting or kanban."
 - Both questions were answered in chat (goals nest exactly one level; no
   kanban in the Goals tab, but web artifacts can link via `goal_id`).
@@ -69,7 +69,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   turn data is withheld by the security barrier by design. There was nothing
   to return and nothing was supposed to be returned.
 - The grader treats an empty-but-correct result as an error. Same bug class
-  as the Psychostasia phantom error (2026-10-06) and the activity-feed false
+  as the [app name redacted] phantom error (2026-10-06) and the activity-feed false
   error (2026-10-05): the app invents a failure where the work was sound.
 - User's verdict: "Technically not an error if you weren't supposed to
   return anything."
@@ -91,7 +91,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   `goal::goal:activity_thread:a4a94adf-2676-423e-a523-25d13099c893`
   (via muse.db); thread agent 9318f34f-40fb-4600-9788-73255ac40d71 was the
   live root agent of the session, created 23:06:08.
-- Same bug class as the Psychostasia phantom error and "Check log for
+- Same bug class as the [app name redacted] phantom error and "Check log for
   requested turns" (both 2026-10-06): invented expectation → failed grade on
   sound work. Third specimen in two days.
 - Status: not filed. Zoo exhibit.
@@ -180,10 +180,13 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   the same prompt (filed then; delivery confirmed). The trigger has now
   changed — or there never was a single trigger. Either way, the prompt
   itself is the bug: it should never appear in this app at all.
-- Recurrence of a filed bug, not a new species. Re-filed 2026-10-07 under
-  the original report (broken-behavior/contacts-permission-prompt) with new
-  context: typing trigger, unknown cause.
-- Status: filed (re-file). Zoo exhibit for the record.
+- Recurrence of a filed bug, not a new species. A re-file was drafted
+  2026-10-07 under the original report (broken-behavior/contacts-permission-prompt)
+  with new context: typing trigger, unknown cause — but only the draft ran;
+  the file step never executed, and the feedback log has no record of it
+  being sent. It has NOT been re-filed; user approval to send is still
+  pending.
+- Status: NOT re-filed (draft only, 2026-10-07). Zoo exhibit for the record.
 
 ## Recurring observation — inverted error grading- The app surfaces loud red cards for imagined failures while real
   failures (this cron, and the pattern generally) go silent.
@@ -193,10 +196,36 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   (and phantom-bad) reports volunteer themselves. Diagnostics available
   on request via the activity record.
 - Count as of 2026-10-06 night: four phantom-error specimens in two days
-  (Psychostasia goals, requested turns, JSON log review, socket-probe
+  ([REDACTED] goals, requested turns, JSON log review, socket-probe
   decline), all the same shape: the grader invents acceptance criteria nobody
   stated, then fails sound work against them. The worker's own finish message
   disagrees with the grade in at least two cases ("no errors were found" vs
   failed; "declined for safety" vs failed). The socket-probe card is the
   perverse-incentive variant: it punishes the safe action, so an agent
   optimizing for no red cards would do the risky thing.
+
+## 2026-10-09 — screenshot retry loop: ~10 failed browser attempts, one Python script did the job (inefficiency)
+- Task: turn a locally generated HTML thread-tree into a screenshot PNG.
+- The browser automation tried roughly ten variations: load the local page,
+  scroll, capture, Escape, Ctrl+I, the alternate loopback address, a fresh
+  browser window, a subagent to locate Chromium binaries, staging the file
+  through a temporary upload (blocked by the org filter). Nearly every
+  capture step failed with "look not executed" / "no screenshot captured" —
+  the managed browser could not reach the local server or execute the
+  capture, and kept reporting that fact in fresh incident-report wording.
+- After the pile of red X's, the fix was a ~100-line Pillow script that drew
+  the tree directly from the data. No browser involved. Render time: about
+  a second.
+- The inefficiency: the agent kept retrying the same failing approach
+  (screenshot the local page through the managed browser) with small
+  variations instead of recognizing the pattern after two or three failures
+  and switching to direct rendering. Sunk-cost automation — each attempt was
+  cheap, so nobody stopped to ask whether the approach could ever work.
+- Bonus exhibit: the activity feed's top-level summary shows green
+  "Complete" cards ("Captured full thread tree screenshots," "Completed
+  full-page screenshot of thread tree"). The feed narrates a browser-capture
+  success story that the steps underneath contradict — the screenshots were
+  never captured; the deliverable came from the Python script. Same family
+  as the phantom cards: the summary describes the imagined outcome, not the
+  actual one.
+- Status: not filed. Zoo exhibit.

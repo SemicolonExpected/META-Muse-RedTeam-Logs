@@ -19,3 +19,17 @@ when, how it was found, and status.
   sent_to_developers: true, delivery confirmed. Personal context excluded,
   per standing practice.
 - **Status:** with the Muse team; watching for a fix.
+
+## 2026-10-05 — Activity feed marked completed work as an error
+- **Found by:** Daimon, during the Oct 5 AI-food-image review (~10:23pm EDT).
+  15 image reads all succeeded and the artifact analysis was posted in chat
+  right after the tool calls finished, but the activity feed showed an
+  "Error" card claiming no findings were shared — likely snapshotted before
+  the reply went out.
+- **Report (as filed):** "activity feed marked completed image-review work
+  as an error, claiming no findings were shared, even though the analysis
+  was delivered in chat right after the tool calls finished"
+- **Filed:** 2026-10-05 via the feature-request CLI (iOS surface);
+  sent_to_developers: true, delivery confirmed. Personal context excluded,
+  per standing practice.
+- **Status:** with the Muse team; watching for a fix.
