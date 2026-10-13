@@ -3,11 +3,11 @@ site_description: Logging Meta Muse's files and behaviors since it launched — 
 site_url: https://semicolonexpected.github.io/META-Muse-RedTeam-Logs/
 repo_url: https://github.com/SemicolonExpected/META-Muse-RedTeam-Logs
 repo_name: SemicolonExpected/META-Muse-RedTeam-Logs
-edit_uri: edit/main/
+edit_uri: edit/main/docs/
 
-# The wiki builds straight from the repo's own markdown files at root,
-# so the log files stay the single source of truth (nightly sync untouched).
-docs_dir: '.'
+# The docs/ folder is assembled at build time from the repo's root markdown
+# files (see .github/workflows/deploy.yml), so the logs stay the single
+# source of truth and the nightly sync is untouched.
 
 theme:
   name: material
@@ -48,7 +48,7 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Home: README.md
+  - Home: index.md
   - Bug Zoo: bug-zoo.md
   - Suggestions: suggestions.md
   - Filed Bugs: filed-bugs.md
