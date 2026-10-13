@@ -20,6 +20,7 @@ Ideas filed away for later — not active work. Revisit when the user asks.
   recurring routines separated from finishable goals. Filed 2026-10-07
   (missing-capability, goals-tab). Status: with the Muse team; watching
   for it in the app.
+- [Muse] Background-completion cards describe one-off tasks as "activity goals", colliding with the real Goals system. Filed 2026-10-12 (broken-behavior, background-completion-cards). Status: with the Muse team; watching for it in the app.
 - (none shipped yet)
 
 ## Done

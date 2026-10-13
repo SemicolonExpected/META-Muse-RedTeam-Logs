@@ -33,3 +33,9 @@ when, how it was found, and status.
   sent_to_developers: true, delivery confirmed. Personal context excluded,
   per standing practice.
 - **Status:** with the Muse team; watching for a fix.
+
+## 2026-10-12 — process.kill reports "failed" on successful SIGTERM
+- **Kind:** broken-behavior / process-kill-result-messaging
+- **Found by:** user (spotted the iOS app showing "Failed to kill process" with Result: failed, while details showed exitSignal 15/SIGTERM — the kill worked)
+- **Report as filed:** 'killing a process via process.kill reports "failed" even when the SIGTERM succeeds'
+- **Delivery:** sent_to_developers: true, delivery_confirmed: true
