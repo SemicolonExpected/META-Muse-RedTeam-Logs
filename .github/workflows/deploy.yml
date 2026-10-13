@@ -18,6 +18,13 @@ jobs:
         with:
           python-version: "3.x"
       - run: pip install mkdocs-material
+      # Assemble docs/ from the repo's root markdown files so the logs
+      # stay the single source of truth (mkdocs forbids docs_dir at root).
+      - run: |
+          mkdir -p docs
+          cp README.md docs/index.md
+          cp bug-zoo.md suggestions.md filed-bugs.md unchangelogged.md data-handling.md docs/
+          cp -r injections docs/ 2>/dev/null || true
       - run: mkdocs build
       - uses: actions/upload-pages-artifact@v3
         with:
