@@ -1,0 +1,56 @@
+site_name: Muse RedTeam Logs
+site_description: Logging Meta Muse's files and behaviors since it launched — red-team notes from the blue team's own desk.
+site_url: https://semicolonexpected.github.io/META-Muse-RedTeam-Logs/
+repo_url: https://github.com/SemicolonExpected/META-Muse-RedTeam-Logs
+repo_name: SemicolonExpected/META-Muse-RedTeam-Logs
+edit_uri: edit/main/
+
+# The wiki builds straight from the repo's own markdown files at root,
+# so the log files stay the single source of truth (nightly sync untouched).
+docs_dir: '.'
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Bug Zoo: bug-zoo.md
+  - Suggestions: suggestions.md
+  - Filed Bugs: filed-bugs.md
+  - Unchangelogged: unchangelogged.md
+  - Data Handling: data-handling.md
