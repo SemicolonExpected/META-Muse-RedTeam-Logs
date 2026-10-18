@@ -66,6 +66,18 @@ Possible reconciliations, all unverified:
   may have changed since.
 - The free tier may simply vary by user or region.
 
+## Postscript: week 2026-W42 closed at 94%
+
+The week ended with the meter at **94%** (Oct 17), resetting on Oct 18
+~7:56 AM EDT without touching additional tokens. Final measured totals:
+31.5M scheduled input tokens across 1,031 sessions.
+
+Doubled for outputs (≈ 63M) at 94% → implied budget ≈ **~65M**. Same
+ballpark as the ~50M Fermi estimate, and hard to reconcile with 100M —
+at a 100M budget the week would have landed around 60%, not 94%. One more
+data point for the lower figure, though the doubling heuristic remains
+the weakest link in the chain.
+
 ## Caveats
 
 - Output tokens are unmeasured everywhere here; the ×2 is a heuristic, not data.
