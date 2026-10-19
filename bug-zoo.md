@@ -4,6 +4,18 @@ Bugs found in the wild, logged regardless of whether they were reported to
 the Muse team. Exhibit over extermination. (Sent reports live in
 `~/workspace/muse-feedback-log.md`.)
 
+## 2026-10-18 — zero-evidence windows still scored 0.0 (follow-up to 2026-10-05)
+- Finding #1 from the 2026-10-05 alignment-pipeline measurement issues is
+  still present: windows with zero evidence are recorded as
+  `correction_free_rate=0.0` instead of null — 0/0 written as the worst
+  possible score, making no-data periods drag the alignment record down.
+- Surfaced by the calibration-verification script
+  (`~/workspace/alignment-verify/verify_alignment.py`), which flags it on
+  every run. 12 windows affected on 2026-10-15, 11 on 2026-10-18.
+- The companion flag from the first run (7/7 repair threads with empty
+  corrections) is now fixed — every thread names its correction.
+- Status: zoo exhibit; covered by the 2026-10-05 filing.
+
 ## 2026-10-05 — alignment pipeline measurement issues (via Claude)
 - Claude (consulted for the hard derivations) found four issues in the
   nightly alignment synthesis measurement pipeline: (1) empty windows
@@ -188,7 +200,9 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   pending.
 - Status: NOT re-filed (draft only, 2026-10-07). Zoo exhibit for the record.
 
-## Recurring observation — inverted error grading- The app surfaces loud red cards for imagined failures while real
+## Recurring observation — inverted error grading
+
+- The app surfaces loud red cards for imagined failures while real
   failures (this cron, and the pattern generally) go silent.
 - Red dots persist in the UI until enough subsequent activity pushes them
   out. The false error has tenure.
