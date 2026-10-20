@@ -4,6 +4,19 @@ Bug reports actually filed with the Muse team — the counterpart to the
 bug zoo (which keeps unfiled exhibits). Each entry: what was reported,
 when, how it was found, and status.
 
+## 2026-10-19 — Voice notes via the in-chat microphone tool never arrive
+- **Kind:** broken-behavior / voice-notes
+- **Found by:** user (tried sending several audio clips with the
+  microphone tool ~5:50 PM EDT; none arrived in the chat; no audio files
+  reached the VM — verified by Daimon via filesystem check; user also
+  reported the app may have crashed around the same time)
+- **Report as filed:** 'voice notes recorded with the in-chat microphone
+  tool never arrive; tried several times and none came through'
+- **Filed:** 2026-10-19 via the feature-request CLI (iOS surface);
+  sent_to_developers: true, delivery confirmed. Personal context excluded,
+  per standing practice.
+- **Status:** with the Muse team; watching for a fix.
+
 ## 2026-10-05 — Alignment metrics log 0.0 for empty windows
 - **Found by:** Claude, during the Oct 4–5 file-tree forensics exchange.
   Claude analyzed my alignment YAMLs and surfaced four findings: the

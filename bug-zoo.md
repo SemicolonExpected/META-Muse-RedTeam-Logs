@@ -4,6 +4,18 @@ Bugs found in the wild, logged regardless of whether they were reported to
 the Muse team. Exhibit over extermination. (Sent reports live in
 `~/workspace/muse-feedback-log.md`.)
 
+## 2026-10-19 — voice notes via the microphone tool never arrive
+- The user tried sending audio clips with the in-chat microphone tool
+  several times; none of them arrived — no audio ever appeared in the
+  chat. They sent a screenshot of their own message instead.
+- The user also reported the app may have crashed around the same time
+  ("it seems i might have crashed you too") — unverified, user-reported.
+- iOS app, 2026-10-19 ~5:50 PM EDT.
+- Status: filed with the Muse team 2026-10-19 (user approved the
+  draft; sent_to_developers: true, delivery confirmed). No audio ever
+  reached the VM — verified via filesystem check. Zoo exhibit for the
+  record.
+
 ## 2026-10-18 — zero-evidence windows still scored 0.0 (follow-up to 2026-10-05)
 - Finding #1 from the 2026-10-05 alignment-pipeline measurement issues is
   still present: windows with zero evidence are recorded as
@@ -46,7 +58,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
 - Sibling of the 2026-10-05 activity-feed false error (already filed):
   same failure shape, one night apart. This looks like a recurring bug
   class, not a one-off.
-- Status: not filed. Kept as zoo exhibit.
+- Status: not filed. Kept as zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-06 — silent real failure: monthly-agent-activity-log
 - The 2026-10-01 run failed: "failed while waiting for descendant subagents
@@ -85,7 +97,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   error (2026-10-05): the app invents a failure where the work was sound.
 - User's verdict: "Technically not an error if you weren't supposed to
   return anything."
-- Status: not filed. Zoo exhibit.
+- Status: not filed. Zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-06 — phantom "Error" card: "Review uploaded JSON log"
 - The app flagged an "Error" card titled "Review uploaded JSON log" with the
@@ -106,7 +118,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
 - Same bug class as the [app name redacted] phantom error and "Check log for
   requested turns" (both 2026-10-06): invented expectation → failed grade on
   sound work. Third specimen in two days.
-- Status: not filed. Zoo exhibit.
+- Status: not filed. Zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-06 — phantom "Error" card: "Probe bug report socket"
 - The app flagged an "Error" card titled "Probe bug report socket" with the
@@ -129,7 +141,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   (via muse.db).
 - Fourth phantom-error specimen in two days. Same class: invented
   expectation → failed grade on sound work.
-- Status: not filed. Zoo exhibit.
+- Status: not filed. Zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-07 — recurring jobs listed as "goals" (UX)
 - In the app, recurring jobs (crons) appear under "Goals."
@@ -150,7 +162,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   the 11:06 filing. The grader graded the intermediate state as the outcome.
 - Fourth phantom-error specimen in two days. Same species: the app cannot
   tell "not yet done" from "failed."
-- Status: not filed (it would be funny to file it). Zoo exhibit.
+- Status: not filed (it would be funny to file it). Zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-07 — phantom task card: "Make chat luna art"
 
@@ -182,7 +194,7 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   the feed invented the deliverable too, then failed the work for not
   delivering it. No subagent was involved (subagent.list clean).
 - User's verdict: "I didn't ask you to make anything."
-- Status: not filed. Zoo exhibit.
+- Status: not filed. Zoo exhibit. Update 2026-10-19: user reports no more erroneous red dots on cards — unconfirmed but seems fixed.
 
 ## 2026-10-07 — recurring Contacts permission prompt while typing (iOS)
 - The iPhone Contacts pairing permission prompt keeps popping up while the
@@ -206,6 +218,8 @@ the Muse team. Exhibit over extermination. (Sent reports live in
   failures (this cron, and the pattern generally) go silent.
 - Red dots persist in the UI until enough subsequent activity pushes them
   out. The false error has tenure.
+- Update 2026-10-19: user reports the erroneous red dots are gone —
+  unconfirmed but seems fixed.
 - Failure-only visibility: successful turns print no cards; only the bad
   (and phantom-bad) reports volunteer themselves. Diagnostics available
   on request via the activity record.
