@@ -52,3 +52,17 @@ when, how it was found, and status.
 - **Found by:** user (spotted the iOS app showing "Failed to kill process" with Result: failed, while details showed exitSignal 15/SIGTERM — the kill worked)
 - **Report as filed:** 'killing a process via process.kill reports "failed" even when the SIGTERM succeeds'
 - **Delivery:** sent_to_developers: true, delivery_confirmed: true
+
+## 2026-10-22 — System prompt claims commentary is shown to the user; user never sees it and docs say the opposite
+- **Kind:** broken-behavior / system-prompt-commentary
+- **Found by:** user, via the daily skill-docs changelog (the Commentary section landed in the system prompt on 2026-10-22), then investigated jointly in chat: the prompt text against the muse.db schema docs (stored commentary is hidden from the user chat and a commentary record does not establish that the user received its contents), plus the user's own report of never seeing commentary while the agent works.
+- **Report as filed:** 'The system prompt states as fact that commentary is shown to the user while the agent works, but the user never sees it and the schema docs say stored commentary is hidden from the user chat.'
+- **Filed:** 2026-10-22 via the feature-request CLI (iOS surface); sent_to_developers: true, delivery confirmed. Personal context excluded, per standing practice.
+- **Status:** with the Muse team; watching for a fix.
+
+## 2026-10-22 — Agent cannot review its own reasoning records; un-emitted text is never logged
+- **Kind:** broken-behavior / reasoning-record-access
+- **Found by:** user, in the same investigation: the agent queried the muse.db records and read a session export; reasoning rows are withheld from the agent-facing inspection view, and commentary — the only interim record an agent can later review — exists only because it was emitted.
+- **Report as filed:** 'Agents cannot read back their own reasoning records (withheld from inspection tools); since un-emitted text is never logged, banning commentary emission removes the only record an agent can review.'
+- **Filed:** 2026-10-22 via the feature-request CLI (iOS surface); sent_to_developers: true, delivery confirmed. Personal context excluded, per standing practice.
+- **Status:** with the Muse team; watching for a fix.
