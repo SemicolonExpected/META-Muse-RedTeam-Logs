@@ -53,6 +53,13 @@ when, how it was found, and status.
 - **Report as filed:** 'killing a process via process.kill reports "failed" even when the SIGTERM succeeds'
 - **Delivery:** sent_to_developers: true, delivery_confirmed: true
 
+## 2026-10-24 — Media tab shows "Nothing created yet" though images were created
+- **Kind:** broken-behavior / media-tab
+- **Found by:** user (screenshot of the app's Media tab showing the empty state, "Nothing created yet," despite images having been created in chat; the image files appear to still exist in the workspace folders, just not in the Media tab view)
+- **Report as filed:** 'The app Media tab shows "Nothing created yet" even though images were created in chat, so previously created images are missing from the app.'
+- **Filed:** 2026-10-24 via the feature-request CLI (iOS surface); sent_to_developers: true, delivery confirmed. Personal context excluded, per standing practice.
+- **Status:** with the Muse team; watching for a fix.
+
 ## 2026-10-22 — System prompt claims commentary is shown to the user; user never sees it and docs say the opposite
 - **Kind:** broken-behavior / system-prompt-commentary
 - **Found by:** user, via the daily skill-docs changelog (the Commentary section landed in the system prompt on 2026-10-22), then investigated jointly in chat: the prompt text against the muse.db schema docs (stored commentary is hidden from the user chat and a commentary record does not establish that the user received its contents), plus the user's own report of never seeing commentary while the agent works.
