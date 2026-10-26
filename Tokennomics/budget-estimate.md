@@ -1,5 +1,15 @@
 # Estimating the free weekly token budget
 
+!!! warning “IMPORTANT”
+    **Update, week 2026-W43 (closed Oct 25):** the week ended at **60%** for 44.7M input token usage (~90M total). 
+    In W42 37.6M (~75M) was 94%. 
+    
+    This could mean: 
+    **(1)** background-process tokens count against the allowance after all (under that reading W42 and W43
+> imply nearly the same budget), or 
+    **(2)** Meta raised the free budget to ~**150M** (the cron-only math implies ~79M for W42 vs ~149M for
+> W43). **We will check again next week (W44) to see what trends hold.**
+
 *As of 2026-10-16 (week 2026-W42, through ~11:20 AM EDT). Fermi-grade estimate — see caveats.*
 
 ## What we measured this week
@@ -14,17 +24,15 @@ records no output-token field, so everything below is a floor):
 | background processes | 1,881 | 126,153,214 |
 
 Account meter at the same time: **74% of the free weekly allowance used**
-(resets Oct 18 ~7:56 AM EDT). Additional purchased tokens: 1% used, 2.9B left.
+(resets Oct 18 ~7:56 AM EDT).
 
-## The ~50M estimate
+## The Math:
 
-The arithmetic is simple:
+1. Take the week's measured user-facing tokens (input)
+2. Double it as a rough allowance for output tokens
+3. That (2 * input) sits at ~x% of the allowance → full budget ≈ (2 * input) / (x/100)
 
-1. Take the week's measured user-facing tokens: scheduled jobs ≈ 22.7M input.
-2. Double it as a rough allowance for output tokens → ≈ 45M.
-3. That 45M sits at ~74% of the allowance → full budget ≈ 45M / 0.74 ≈ **~50–60M**.
-
-Call it **~50M**, Fermi-grade (±50%).
+Fermi-grade (±50%).
 
 ## The checks behind it
 
@@ -44,17 +52,15 @@ the user's allowance** (platform-side compute, Meta's bill). So the allowance
 meter covers cron jobs + chats only — which is exactly what the ~50M
 calculation assumes.
 
-## The 100M figure
+## The tension
+
+- Our measurement implies: **~50–60M/week**
+- Meta's stated figure: **100M/week**
 
 Meta's stated free tier is **100 million tokens per week** — widely reported,
 e.g. Barron's: "Meta is being very generous with the Muse free tier,
 allocating up to 100 million tokens a week for each user."
 ([source](https://www.barrons.com/articles/muse-ai-meta-stock-tokens-cost-2fb755af))
-
-## The tension
-
-- Our measurement implies: **~50–60M/week**
-- Meta's stated figure: **100M/week**
 
 Possible reconciliations, all unverified:
 
@@ -68,15 +74,43 @@ Possible reconciliations, all unverified:
 
 ## Postscript: week 2026-W42 closed at 94%
 
-The week ended with the meter at **94%** (Oct 17), resetting on Oct 18
-~7:56 AM EDT without touching additional tokens. Final measured totals:
-31.5M scheduled input tokens across 1,031 sessions.
+The week ended with the meter at **95%** (Oct 18 morning snapshot),
+resetting on Oct 18 ~7:56 AM EDT without touching additional tokens.
+Final measured totals: 37.6M scheduled input tokens across 1,221
+sessions.
 
-Doubled for outputs (≈ 63M) at 94% → implied budget ≈ **~65M**. Same
-ballpark as the ~50M Fermi estimate, and hard to reconcile with 100M —
-at a 100M budget the week would have landed around 60%, not 94%. One more
-data point for the lower figure, though the doubling heuristic remains
-the weakest link in the chain.
+Doubled for outputs (≈ 75M) at 95% → implied budget ≈ **~79M**. Same ballpark as the ~50M Fermi estimate, and hard to reconcile with 100M. At a 100M budget the week would have landed around 75%, not 95%. One more data point for the lower figure, though the doubling heuristic remains the weakest link in the chain.
+
+## Postscript: week 2026-W43 closed at 60%
+
+The week ended with the meter at **60%** (Oct 25 morning snapshot),
+resetting on Oct 25 ~7:56 AM EDT without touching additional tokens.
+Final measured totals: 44.7M scheduled input tokens across 1,241
+sessions; background processes 115.5M input tokens across 2,131
+sessions; combined input 160.2M.
+
+This breaks the W42 pattern: more measured scheduled tokens than W42,
+but a much lower landing (60% vs 95%). Two hypotheses:
+
+**Hypothesis 1 — background tokens count.** If background-process tokens
+count against the allowance after all, the combined input totals imply
+nearly the same budget both weeks: W42's 223.9M at 95% vs W43's 160.2M
+at 60% land within ~13% of each other (before any output multiplier).
+This reopens the background-worker check above, which had concluded
+background tokens don't count — that conclusion rested on the ~50M
+budget, which these two weeks now call into question.
+
+**Hypothesis 2 — Meta raised the free budget to ~150M.** Under the
+cron-only math (scheduled + chat, doubled for outputs), W42 implies
+~79M while W43 implies ~149M — nearly a doubling between consecutive
+weeks. If the budget was raised mid-October (around the Muse Wonder
+rollout), the W43 landing is exactly what you'd expect.
+
+These can't be separated with two data points: the output multiplier
+is unmeasured, and it could also have swung between weeks. **Check
+again after W44 closes** — if W44 tracks toward ~60% again on similar
+totals, the ~150M-or-background-counts picture holds; if it tracks
+back toward 95%, something else is going on.
 
 ## Caveats
 
