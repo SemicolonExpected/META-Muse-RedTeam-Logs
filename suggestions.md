@@ -22,6 +22,7 @@ Ideas filed away for later — not active work. Revisit when the user asks.
   for it in the app.
 - [Muse] Background-completion cards describe one-off tasks as "activity goals", colliding with the real Goals system. Filed 2026-10-12 (broken-behavior, background-completion-cards). Status: with the Muse team; watching for it in the app.
 - [Muse] Layered avatar items that can be equipped, removed, and recolored on a base avatar, instead of a whole new generated avatar for each look. Filed 2026-10-24 (missing-capability, avatar-layered-items). Status: sent to developers, delivery confirmed; watching for it in the app.
+- [Muse] Background workers should triage email by subject line or search query before loading full message bodies, since full HTML emails full of trackers waste tokens proving a negative. Filed 2026-10-27 (missing-capability, email-subject-triage). Status: sent to developers, delivery confirmed; watching for it in the app.
 - (none shipped yet)
 
 ## Done

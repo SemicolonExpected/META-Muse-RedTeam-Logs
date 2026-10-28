@@ -4,6 +4,16 @@ Bug reports actually filed with the Muse team — the counterpart to the
 bug zoo (which keeps unfiled exhibits). Each entry: what was reported,
 when, how it was found, and status.
 
+## 2026-10-27 — System Files uploads land on disk but the folder view shows empty
+- **Kind:** broken-behavior / system-files-upload
+- **Found by:** user (tried uploading files into the workspace via the app's System Files view; the view showed "Empty folder / No files in this directory" and no notification reached the agent; Daimon verified via filesystem check that the files had in fact landed in the folder)
+- **Report as filed:** 'uploads made through the app System Files view land in the workspace folder, but the folder view still shows it as empty, so neither the user nor the agent gets confirmation of the upload'
+- **Filed:** 2026-10-27 via the feature-request CLI (iOS surface); sent_to_developers: true, delivery confirmed. Personal context excluded, per standing practice.
+- **Status:** with the Muse team; watching for a fix.
+- **Screenshot (user-supplied, Empty folder view):**
+
+![Empty folder view](system-files-upload-empty-folder.jpg)
+
 ## 2026-10-19 — Voice notes via the in-chat microphone tool never arrive
 - **Kind:** broken-behavior / voice-notes
 - **Found by:** user (tried sending several audio clips with the
